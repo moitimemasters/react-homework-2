@@ -1,0 +1,53 @@
+.navigation-bar {
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #ff7c7c, #ff6363);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    background: #ff7c7c;
+    color: white;
+    border: 1px solid white;
+}
+
+.nav-item, button {
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: white;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}

@@ -1,0 +1,59 @@
+.card-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+
+.card-modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-modal-image {
+    max-height: 40vh;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-modal-title {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-modal-description {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.close-modal-btn {
+    padding: 10px 20px;
+    background: #ff7c7c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.close-modal-btn:hover {
+    background: #ff6363;
+}
