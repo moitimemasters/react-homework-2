@@ -1,7 +1,9 @@
-import { CardGrid, Modal, NavBar, Sidebar } from "../components"
-import cardData from '../data/cards.json'
+import { CardGrid, Modal, NavBar, Sidebar } from "../../components"
 import { useState } from "react";
-import { CardProps } from "../types";
+import { CardProps } from "../../types";
+import cardData from '../../data/cards.json'
+
+import styles from "./style.module.css"
 
 
 
@@ -29,14 +31,7 @@ export const HomePage: React.FC = () => {
         <>
             <NavBar toggleSidebar={toggleSidebar} />
             <Sidebar isOpen={isSidebarOpen} />
-            <div
-                style={{
-                    marginLeft: isSidebarOpen ? '350px' : '0',
-                    transition: 'margin-left 0.3s ease-in-out',
-                    padding: '20px',
-                }}
-
-            >
+            <div className={`${styles.main} ${isSidebarOpen ? styles.open : ''}`}>
                 <CardGrid data={cardData} onClick={handleCardClick} />
                 {selectedCard && (
                     <Modal {...selectedCard} onClose={handleCloseModal} />
