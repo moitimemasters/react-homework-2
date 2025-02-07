@@ -6,3 +6,9 @@ export interface CardProps {
     units: string;
     imageUrl?: string;
 }
+
+export interface Category {
+    id: number;
+    name: string;
+    description?: string;
+}

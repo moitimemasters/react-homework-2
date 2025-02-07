@@ -1,14 +1,16 @@
 import { CardGrid, Modal, NavBar, Sidebar } from "../../components"
 import { useState } from "react";
 import { CardProps } from "../../types";
-import cardData from '../../data/cards.json'
 
 import styles from "./style.module.css"
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 
 
 
 export const HomePage: React.FC = () => {
+    const goods = useSelector((state: RootState) => state.goods.items)
 
     const [selectedCard, setSelectedCard] = useState<CardProps | null>(null);
 
@@ -32,7 +34,7 @@ export const HomePage: React.FC = () => {
             <NavBar toggleSidebar={toggleSidebar} />
             <Sidebar isOpen={isSidebarOpen} />
             <div className={`${styles.main} ${isSidebarOpen ? styles.open : ''}`}>
-                <CardGrid data={cardData} onClick={handleCardClick} />
+                <CardGrid data={goods} onClick={handleCardClick} />
                 {selectedCard && (
                     <Modal {...selectedCard} onClose={handleCloseModal} />
                 )}
